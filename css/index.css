@@ -1,0 +1,443 @@
+/* css/index.css */
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;800&family=Rajdhani:wght@300;400;500;600;700&display=swap');
+
+
+/* Variables */
+:root {
+    --color-fondo: #0f172a;
+    --color-superficie: #1e293b;
+    --color-primario: #3b82f6;
+    --color-primario-hover: #2563eb;
+    --color-secundario: #ef4444;
+    --color-acento: #10b981;
+    --color-gradiente: linear-gradient(135deg, #3b82f6 0%, #10b981 100%);
+    --color-texto: #f8fafc;
+    --color-texto-secundario: #94a3b8;
+    --borde-radio: 12px;
+    --sombra-suave: 0 10px 15px -3px rgba(0, 0, 0, 0.3);
+    --sombra-hover: 0 20px 25px -5px rgba(0, 0, 0, 0.4);
+    --transicion: all 0.3s ease;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Rajdhani', sans-serif;
+    background: var(--color-fondo);
+    color: var(--color-texto);
+    line-height: 1.6;
+}
+
+h1, h2, h3, h4, h5, h6, .logo {
+    font-family: 'Orbitron', sans-serif;
+}
+
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+/* Header */
+header {
+    background: rgba(30, 41, 59, 0.9);
+    backdrop-filter: blur(10px);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    padding: 1rem 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.header-container {
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 0 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    font-size: 1.5rem;
+    font-weight: 800;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    color: var(--color-texto);
+    transition: var(--transicion);
+}
+
+.logo:hover {
+    color: var(--color-primario);
+    transform: scale(1.1) rotate(5deg);
+}
+
+.logo i {
+    color: var(--color-primario);
+    font-size: 2.5rem; /* Larger icon as requested */
+    filter: drop-shadow(0 0 10px var(--color-primario));
+}
+
+
+.header-derecha {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.bienvenida {
+    font-size: 0.95rem;
+    color: var(--color-texto-secundario);
+}
+
+/* Buttons */
+button {
+    font-family: inherit;
+    background: var(--color-primario);
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 8px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: var(--transicion);
+}
+
+button:hover {
+    background: var(--color-primario-hover);
+}
+
+.btn-login {
+    background: transparent;
+    border: 1px solid var(--color-primario);
+    color: var(--color-primario);
+}
+
+.btn-login:hover {
+    background: var(--color-primario);
+    color: white;
+}
+
+.btn-secundario {
+    background: var(--color-superficie);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.btn-secundario:hover {
+    background: rgba(255, 255, 255, 0.1);
+}
+
+/* Cart Icon */
+.icono-carrito {
+    position: relative;
+    font-size: 1.4rem;
+    padding: 5px;
+    display: flex;
+    align-items: center;
+    transition: var(--transicion);
+}
+
+.icono-carrito:hover {
+    color: var(--color-primario);
+    transform: scale(1.1);
+}
+
+.badge-carrito {
+    position: absolute;
+    top: -5px;
+    right: -10px;
+    background: var(--color-secundario);
+    color: white;
+    font-size: 0.75rem;
+    font-weight: bold;
+    width: 22px;
+    height: 22px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 2px solid var(--color-fondo);
+}
+
+/* Layout */
+.container {
+    max-width: 1280px;
+    margin: 40px auto;
+    padding: 0 20px;
+}
+
+/* Filters */
+.controles {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 30px;
+    flex-wrap: wrap;
+    gap: 15px;
+}
+
+.filtros {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+.btn-filtro {
+    background: var(--color-superficie);
+    color: var(--color-texto-secundario);
+}
+
+.btn-filtro:hover,
+.btn-filtro.activo {
+    background: var(--color-primario);
+    color: white;
+}
+
+/* Products */
+.productos {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 30px;
+}
+
+.tarjeta-producto {
+    background: var(--color-superficie);
+    border-radius: var(--borde-radio);
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    transition: var(--transicion);
+}
+
+.tarjeta-producto:hover {
+    transform: translateY(-8px);
+    border-color: rgba(59, 130, 246, 0.5);
+    box-shadow: var(--sombra-hover);
+}
+
+.imagen-wrapper {
+    background: transparent;
+    padding: 20px;
+    text-align: center;
+}
+
+.imagen-producto {
+    width: 100%;
+    height: 200px;
+    object-fit: contain;
+    transition: var(--transicion);
+}
+
+.tarjeta-producto:hover .imagen-producto {
+    transform: scale(1.05);
+}
+
+.info-producto {
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+}
+
+.categoria {
+    font-size: 0.8rem;
+    color: var(--color-primario);
+    text-transform: uppercase;
+    margin-bottom: 8px;
+    font-weight: 700;
+}
+
+.info-producto h3 {
+    font-size: 1.2rem;
+    margin-bottom: 15px;
+}
+
+.precio-btn {
+    margin-top: auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.precio {
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+.btn-add {
+    width: 45px;
+    height: 45px;
+    padding: 0;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Popup */
+.modal-oculto {
+    display: none;
+}
+
+.modal-visible {
+    display: flex;
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.8);
+    z-index: 9999;
+    justify-content: center;
+    align-items: center;
+}
+
+.modal-contenido {
+    background: var(--color-superficie);
+    padding: 40px;
+    border-radius: var(--borde-radio);
+    text-align: center;
+    max-width: 450px;
+    position: relative;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.modal-icono {
+    font-size: 3rem;
+    color: var(--color-acento);
+    margin-bottom: 15px;
+}
+
+.modal-contenido h2 {
+    margin-bottom: 15px;
+    font-size: 1.8rem;
+}
+
+.modal-contenido p {
+    margin-bottom: 25px;
+    color: var(--color-texto-secundario);
+}
+
+.modal-contenido span {
+    color: var(--color-acento);
+    font-weight: bold;
+}
+
+.cerrar {
+    position: absolute;
+    top: 15px;
+    right: 20px;
+    font-size: 28px;
+    cursor: pointer;
+    color: var(--color-texto-secundario);
+}
+
+.cerrar:hover {
+    color: var(--color-secundario);
+}
+
+.btn-oferta {
+    width: 100%;
+    background: var(--color-acento);
+}
+
+/* Footer */
+footer {
+    background: var(--color-superficie);
+    padding: 60px 0 20px;
+    margin-top: 80px;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.footer-container {
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 0 20px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 40px;
+}
+
+.footer-section h4 {
+    color: var(--color-texto);
+    margin-bottom: 20px;
+    font-size: 1.1rem;
+    position: relative;
+    padding-bottom: 10px;
+}
+
+.footer-section h4::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 30px;
+    height: 2px;
+    background: var(--color-primario);
+}
+
+.footer-section ul {
+    list-style: none;
+}
+
+.footer-section ul li {
+    margin-bottom: 12px;
+}
+
+.footer-section ul li a {
+    color: var(--color-texto-secundario);
+    transition: var(--transicion);
+    font-size: 0.9rem;
+}
+
+.footer-section ul li a:hover {
+    color: var(--color-primario);
+    padding-left: 5px;
+}
+
+.footer-bottom {
+    max-width: 1280px;
+    margin: 60px auto 0;
+    padding: 20px;
+    text-align: center;
+    border-top: 1px solid rgba(255, 255, 255, 0.05);
+    color: var(--color-texto-secundario);
+    font-size: 0.85rem;
+}
+
+.social-links {
+    display: flex;
+    gap: 15px;
+    margin-top: 15px;
+}
+
+.social-links span {
+    width: 35px;
+    height: 35px;
+    background: rgba(255, 255, 255, 0.05);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    transition: var(--transicion);
+    cursor: default;
+}
+
+.social-links span:hover {
+    background: var(--color-primario);
+    color: white;
+    transform: translateY(-3px);
+}
+
+@media (max-width: 850px) {
+    .header-derecha {
+        gap: 10px;
+    }
+
+    .zona-usuario span {
+        display: none;
+    }
+}

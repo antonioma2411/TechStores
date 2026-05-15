@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Carrito - TechStore</title>
+    <!-- CSS -->
+    <link rel="stylesheet" href="css/carrito.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+
+<body>
+    <!-- Login -->
+    <div id="modalLogin" class="modal-oculto">
+        <div class="modal-contenido">
+            <span id="cerrarLogin" class="cerrar">&times;</span>
+            <div class="modal-icono"><i class="fa-solid fa-circle-user"></i></div>
+            <h2>Iniciar Sesión</h2>
+            <p>Introduce tu nombre para una experiencia personalizada.</p>
+            <input type="text" id="inputNombre" placeholder="Escribe tu nombre aquí..."
+                style="width: 100%; padding: 12px; border-radius: 8px; border: 1px solid rgba(255,255,255,0.1); background: rgba(0,0,0,0.2); color: white; margin-bottom: 20px; outline: none;">
+            <button class="btn-oferta" onclick="guardarNombre()">Entrar</button>
+        </div>
+    </div>
+    <!-- Header -->
+    <header>
+        <div class="header-container">
+            <a href="index.html" class="logo" title="Volver al inicio">
+                <i class="fa-solid fa-microchip"></i> TechStore
+            </a>
+            <div class="header-derecha">
+                <!-- User -->
+                <div id="zonaUsuario" class="zona-usuario"></div>
+                <a href="carrito.html" class="icono-carrito" title="Ver mi carrito">
+                    <i class="fa-solid fa-cart-shopping"></i>
+                    <span id="contadorCarrito" class="badge-carrito">0</span>
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <main class="container layout-carrito">
+        <!-- Cart List -->
+        <section class="seccion-lista">
+            <div class="cabecera-lista">
+                <h2>Tu Compra</h2>
+                <button class="btn-vaciar" onclick="vaciarCarrito()">Vaciar Carrito</button>
+            </div>
+            <div id="listaCarrito" class="lista-carrito">
+                <!-- JS injection -->
+            </div>
+        </section>
+
+        <!-- Summary -->
+        <section class="resumen-pedido">
+            <h3>Resumen</h3>
+            <div class="detalle">
+                <p>Subtotal: <span id="subtotal">0.00</span>€</p>
+                <p>Envío: <span id="envio">0.00</span>€</p>
+                <p class="nota">¡Envío gratis a partir de 500€!</p>
+            </div>
+            <div class="total-final">
+                <span>Total:</span>
+                <span id="total" class="precio-total">0.00€</span>
+            </div>
+            <button class="btn-pagar" onclick="procesarPago()">Procesar Pago</button>
+        </section>
+        <footer>
+            <div class="footer-container">
+                <div class="footer-section">
+                    <h4>Nuestra Misión</h4>
+                    <p style="color: var(--color-texto-secundario); font-size: 0.9rem;">Llevando el futuro a tu cueva.
+                        Tecnología de punta para humanos modernos.</p>
+                    <div class="social-links">
+                        <span><i class="fa-brands fa-x-twitter"></i></span>
+                        <span><i class="fa-brands fa-instagram"></i></span>
+                        <span><i class="fa-brands fa-github"></i></span>
+                    </div>
+                </div>
+                <div class="footer-section">
+                    <h4>Productos</h4>
+                    <ul>
+                        <li>Portátiles</li>
+                        <li>Periféricos</li>
+                        <li>Componentes</li>
+                        <li>Ofertas</li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Ayuda</h4>
+                    <ul>
+                        <li>Soporte Técnico</li>
+                        <li>Envíos</li>
+                        <li>Devoluciones</li>
+                        <li>Privacidad</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                &copy; 2026 TechStore. Todos los derechos reservados.
+            </div>
+        </footer>
+
+        <!-- JS -->
+        <script src="js/carrito.js"></script>
+</body>
+
+</html>

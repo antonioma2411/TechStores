@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TechStore - Tu tienda de tecnología</title>
+    <!-- CSS -->
+    <link rel="stylesheet" href="css/index.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+
+<body>
+    <!-- Popup -->
+    <div id="modalOferta" class="modal-oculto">
+        <div class="modal-contenido">
+            <span id="cerrarModal" class="cerrar">&times;</span>
+            <div class="modal-icono"><i class="fa-solid fa-gift"></i></div>
+            <h2>¡Oferta Gaming!</h2>
+            <p>¡Consigue el <strong>Portátil Gaming Pro</strong> con un precio especial y envío gratis!</p>
+            <button class="btn-oferta" onclick="aceptarOferta()">¡Lo quiero!</button>
+        </div>
+    </div>
+
+    <!-- Login -->
+    <div id="modalLogin" class="modal-oculto">
+        <div class="modal-contenido">
+            <span id="cerrarLogin" class="cerrar">&times;</span>
+            <div class="modal-icono"><i class="fa-solid fa-circle-user"></i></div>
+            <h2>Iniciar Sesión</h2>
+            <p>Introduce tu nombre para una experiencia personalizada.</p>
+            <input type="text" id="inputNombre" placeholder="Escribe tu nombre aquí..."
+                style="width: 100%; padding: 12px; border-radius: 8px; border: 1px solid rgba(255,255,255,0.1); background: rgba(0,0,0,0.2); color: white; margin-bottom: 20px; outline: none;">
+            <button class="btn-oferta" onclick="guardarNombre()">Entrar</button>
+        </div>
+    </div>
+
+    <!-- Header -->
+    <header>
+        <div class="header-container">
+            <a href="index.html" class="logo" title="Volver al inicio">
+                <i class="fa-solid fa-microchip"></i> TechStore
+            </a>
+            <div class="header-derecha">
+                <!-- User -->
+                <div id="zonaUsuario" class="zona-usuario"></div>
+                <!-- Cart -->
+                <a href="carrito.html" class="icono-carrito" title="Ver mi carrito">
+                    <i class="fa-solid fa-cart-shopping"></i>
+                    <span id="contadorCarrito" class="badge-carrito">0</span>
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <main class="container">
+        <!-- Filters -->
+        <section class="controles">
+            <div class="filtros">
+                <button class="btn-filtro activo" onclick="filtrarPorCategoria('Todos', this)">Todos</button>
+                <button class="btn-filtro" onclick="filtrarPorCategoria('Portátiles', this)">Portátiles</button>
+                <button class="btn-filtro" onclick="filtrarPorCategoria('Periféricos', this)">Periféricos</button>
+                <button class="btn-filtro" onclick="filtrarPorCategoria('Componentes', this)">Componentes</button>
+            </div>
+            <div class="ordenar">
+                <button class="btn-secundario" onclick="ordenarPorPrecio()">
+                    <i class="fa-solid fa-arrow-down-short-wide"></i> Precio (Menor a Mayor)
+                </button>
+            </div>
+        </section>
+
+        <!-- Products -->
+        <section class="productos" id="contenedorProductos"></section>
+    </main>
+    <footer>
+        <div class="footer-container">
+            <div class="footer-section">
+                <h4>Nuestra Misión</h4>
+                <p style="color: var(--color-texto-secundario); font-size: 0.9rem;">Llevando el futuro a tu cueva.
+                    Tecnología de punta para humanos modernos.</p>
+                <div class="social-links">
+                    <span><i class="fa-brands fa-x-twitter"></i></span>
+                    <span><i class="fa-brands fa-instagram"></i></span>
+                    <span><i class="fa-brands fa-github"></i></span>
+                </div>
+            </div>
+            <div class="footer-section">
+                <h4>Productos</h4>
+                <ul>
+                    <li>Portátiles</li>
+                    <li>Periféricos</li>
+                    <li>Componentes</li>
+                    <li>Ofertas</li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4>Ayuda</h4>
+                <ul>
+                    <li>Soporte Técnico</li>
+                    <li>Envíos</li>
+                    <li>Devoluciones</li>
+                    <li>Privacidad</li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            &copy; 2026 TechStore. Todos los derechos reservados.
+        </div>
+    </footer>
+
+    <!-- JS -->
+    <script src="js/index.js"></script>
+</body>
+
+</html>
